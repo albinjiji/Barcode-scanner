@@ -4,7 +4,6 @@ import AntDesign from "react-native-vector-icons/AntDesign";
 import { View, StyleSheet, Text } from "react-native";
 
 export default function Sale() {
-  const [male, setMale] = useState(false);
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -26,20 +25,21 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 80,
     flexDirection: "row",
-    borderBottomWidth: 0.6,
+    borderBottomWidth: 0.5,
     borderBottomColor: "#b7bfb2",
     alignItems: "center",
+    padding: 0,
   },
   headerText: {
     fontWeight: "bold",
     fontSize: 22,
     color: "#333",
     top: "3%",
-    left: 22,
+    left: "15%",
   },
   headerIcon: {
     top: "3%",
-    left: 5,
+    left: "10%",
   },
   settingsText: {
     fontSize: 22,
