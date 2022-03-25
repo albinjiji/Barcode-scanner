@@ -1,13 +1,7 @@
 import React, { useState } from "react";
 import AntDesign from "react-native-vector-icons/AntDesign";
-import { CheckBox } from "react-native-elements";
-import {
-  View,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-} from "react-native";
+
+import { View, StyleSheet, Text } from "react-native";
 
 export default function Sale() {
   const [male, setMale] = useState(false);
@@ -17,23 +11,11 @@ export default function Sale() {
         <AntDesign
           name="arrowleft"
           size={35}
-          color="#c4483d"
+          color="#f54281"
           style={styles.headerIcon}
         />
         <Text style={styles.headerText}>Add Sale</Text>
         <Text style={styles.settingsText}>Settings</Text>
-      </View>
-      <View style={styles.check}>
-        <CheckBox
-          title="male"
-          uncheckedIcon="circle-o"
-          checkedIcon="dot-circle-o"
-        />
-        <CheckBox
-          title="female"
-          uncheckedIcon="circle-o"
-          checkedIcon="dot-circle-o"
-        />
       </View>
     </View>
   );
@@ -62,13 +44,9 @@ const styles = StyleSheet.create({
   settingsText: {
     fontSize: 22,
     fontWeight: "bold",
-    color: "#c4483d",
+    color: "#f54281",
     textAlign: "left",
     left: "230%",
     top: "3%",
-  },
-  check: {
-    width: "30%",
-    flexWrap: "wrap",
   },
 });
