@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
     top: "13%",
     borderTopWidth: 0.5,
     borderTopColor: "#b7bfb2",
+    position: "relative",
   },
   bill: {
     top: "3%",
