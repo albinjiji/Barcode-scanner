@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, StyleSheet, Text, TextInput } from "react-native";
+import { FlatGrid } from "react-native-super-grid";
 
 export default function Bill() {
+  const [item, setItem] = useState([
+    { name: "Importace", code: "10/10" },
+    { name: "Avg Order Value", code: "₹265" },
+    { name: "Avg Revisit in", code: "26 days" },
+  ]);
   return (
     <View style={styles.container}>
       <View style={styles.bill}>
@@ -16,7 +22,22 @@ export default function Bill() {
         <Text style={styles.number}>7000413345</Text>
         <Text style={styles.textStatus}>You'll receive</Text>
       </View>
-      <View style={styles.items}></View>
+      <View style={styles.items}>
+        <FlatGrid
+          itemDimension={115}
+          data={item}
+          style={styles.gridView}
+          // staticDimension={300}
+          // fixed
+          spacing={6}
+          renderItem={({ item }) => (
+            <View style={[styles.itemContainer]}>
+              <Text style={styles.itemName}>{item.name}</Text>
+              <Text style={styles.itemCode}>{item.code}</Text>
+            </View>
+          )}
+        />
+      </View>
     </View>
   );
 }
@@ -27,7 +48,6 @@ const styles = StyleSheet.create({
     top: "13%",
     borderTopWidth: 0.5,
     borderTopColor: "#b7bfb2",
-    padding: 10,
   },
   bill: {
     top: "3%",
@@ -38,12 +58,13 @@ const styles = StyleSheet.create({
     fontSize: 18,
     justifyContent: "flex-start",
     fontWeight: "bold",
+    left: "20%",
   },
   changeText: {
     fontSize: 18,
     fontWeight: "bold",
     color: "#f54281",
-    right: "20%",
+    right: "30%",
   },
   person: {
     top: "6%",
@@ -53,11 +74,12 @@ const styles = StyleSheet.create({
   textPerson: {
     fontSize: 22,
     fontWeight: "bold",
+    left: "20%",
   },
   textPrice: {
     fontSize: 28,
     fontWeight: "800",
-    right: "20%",
+    right: "30%",
     color: "red",
   },
   details: {
@@ -68,25 +90,38 @@ const styles = StyleSheet.create({
   number: {
     fontSize: 16,
     color: "gray",
+    left: "20%",
   },
   textStatus: {
     fontSize: 16,
     color: "gray",
-    right: "20%",
+    right: "30%",
   },
   items: {
     top: "25%",
   },
-  item1: {
-    fontSize: 16,
-    color: "gray",
+  gridView: {
+    width: "100%",
+    left: "0%",
+    borderWidth: 1,
   },
-  item2: {
-    fontSize: 16,
-    color: "gray",
+  itemContainer: {
+    justifyContent: "center",
+    height: 60,
+    borderColor: "gray",
+    borderRightWidth: 1,
+    borderRightColor: "gray",
+    width: "110%",
   },
-  item3: {
-    fontSize: 16,
+  itemName: {
+    fontSize: 14,
     color: "gray",
+    left: "10%",
+  },
+  itemCode: {
+    fontSize: 20,
+    fontWeight: "600",
+    fontWeight: "bold",
+    left: "10%",
   },
 });
