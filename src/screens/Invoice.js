@@ -24,7 +24,7 @@ export default function Invoice() {
 const styles = StyleSheet.create({
   container: {
     position: "relative",
-    top: "28%",
+    top: "25%",
     flexDirection: "row",
   },
   textInvoice: {

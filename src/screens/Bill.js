@@ -45,7 +45,7 @@ export default function Bill() {
 const styles = StyleSheet.create({
   container: {
     display: "flex",
-    top: "13%",
+    top: "8%",
     borderTopWidth: 0.5,
     borderTopColor: "#b7bfb2",
     position: "relative",
