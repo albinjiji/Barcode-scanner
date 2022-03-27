@@ -1,7 +1,7 @@
 import React from "react";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import { View, StyleSheet, Text, TextInput, Button } from "react-native";
-import Scanner from "./Scanner";
+import { useNavigation } from "@react-navigation/native";
 
 const Products = ({ navigation }) => {
   return (
